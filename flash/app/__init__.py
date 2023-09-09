@@ -9,7 +9,7 @@ from flask_login import LoginManager
 app = Flask(__name__)
 app.config.from_object(Config)
 app.config['SQLALCHEMY_DATABASE_URI'] = \
-        'sqlite:///test'
+        'sqlite:///test.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = \
         False
 db = SQLAlchemy(app)
@@ -18,4 +18,4 @@ login = LoginManager(app)
 login.login_view = 'login'
 
 
-from app import routes, models
+from app import routes, models, error
