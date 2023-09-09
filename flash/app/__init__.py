@@ -9,7 +9,7 @@ from flask_login import LoginManager
 app = Flask(__name__)
 app.config.from_object(Config)
 app.config['SQLALCHEMY_DATABASE_URI'] = \
-        'mysql://root:''@localhost/test'
+        'sqlite:///test'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = \
         False
 db = SQLAlchemy(app)
